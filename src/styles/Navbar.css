@@ -1,0 +1,18 @@
+.header_container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.header_container .nav_container {
+    padding-top: 58px;
+}
+
+.nav_container .nav_list .nav_item {
+    display: inline-block;
+}
+
+.nav_list .nav_item .nav_link {
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+} 

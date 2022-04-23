@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+
+import { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Home from './components/Home';
+import Movies from './components/Movies';
+import Navbar from './components/Navbar';
+import Tvseries from './components/Tvseries';
 
 function App() {
+
+  const [movies, setMovies] = useState([]);
+
+  useEffect( () => {
+
+    
+
+  },[]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route index path="/" element={<Home />}/>
+          <Route path="/movies" element={<Movies />}/>
+          <Route path="/tvseries" element={<Tvseries />}/>
+        </Routes>
+
+      </div>
+    </BrowserRouter>
   );
 }
 
