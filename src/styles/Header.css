@@ -1,0 +1,39 @@
+.container-logo {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.container-logo .logo-image img {
+    width: 35px;
+    
+}
+    
+    
+
+.container-logo .logo-title h1 {
+    font-weight: 600;
+    padding: 5px 5px;
+    color: #FFF;
+}
+   
+    
+    
+
+.container-logo .logo-title h1:hover {
+   
+    color: #a0a0a0;
+    font-weight: 600;
+    padding: 5px 5px;
+   
+    
+}
+
+.container-logo .logo-title a {
+    text-decoration: none;
+}  
+   
+  
+   
+
+                
