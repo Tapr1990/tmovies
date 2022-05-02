@@ -1,10 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { ApiData } from '../contexts/ApiData';
-import {Swiper, SwiperSlide} from 'swiper/react'
-import SwiperCore, {Autoplay} from 'swiper'
+
 import '../styles/Hero.css';
 
 export default function Hero() {
+
+    const IMG_API = "https://image.tmdb.org/t/p/w1280";
   
     const context = useContext(ApiData);
 
@@ -12,54 +13,60 @@ export default function Hero() {
 
     const images = imageSlider;
 
+    
+    const [activeIndex, setActiveIndex] = useState(0);    
 
-    //SwiperCore.use([Autoplay]);
-    // autoplay={{delay: 5000}}
+    const prevslide = () =>{
+
+        if(activeIndex < 1) {
+            setActiveIndex(images.length-1)
+        }
+        else {
+            setActiveIndex(activeIndex-1)
+        }       
+    }
+
+    const nextslide = () => {
+
+        if(activeIndex === images.length-1) {
+            setActiveIndex(0)
+        }
+        else {
+            setActiveIndex(activeIndex+1)
+        }
+    }
 
     return (
-        <div className="container-swiper">
-          
-                
-                
-                        {images.map(image => (
+        
+            <section>
+                <div className='hero'>
+                    {images.map((image, index) => (
+                        <div className={index === activeIndex ? "slides active" : "inactive"} key={image.id} >
+                            <div className="hero-background" style={{backgroundImage: "url(" + IMG_API + image.backdrop_path+ ")"}}/>
+                            <div className="hero-info">
+                                <h2>{image.title}</h2>
+                                <p>{image.overview}</p>
+                            </div>
+                            <div className="hero-poster">
+                                <img src={"https://image.tmdb.org/t/p/w500" + image.poster_path} alt={image.title}/>
+                            </div>
+                        </div>
 
-                            <section className="Hero-container" key={image.id}>
-                                <div className="Hero-image"  style={{backgroundImage: `url(${"https://image.tmdb.org/t/p/w1280" +image.backdrop_path})`}}>
-                                    <div className='Hero-info'>
-                                        <div className='hero-text'>
-                                            <h2>{image.title}</h2>
-                                            <p>{image.overview}</p>
-                                        </div>
-                                        <div className='Hero-poster'>
-                                            <img></img>
-                                        </div>
-                        
-                                        
-                                    </div>
-                                </div>
-                            </section>
+                    ))}
+                        <div>
+                            <span className="prevslide" onClick={prevslide}>&#10094;</span>
+                            <span className="nextslide" onClick={nextslide}>&#10095;</span>
+                        </div>
+                        <div className="hero-btn">
+                            <span className="btn"><a href="">Play trailer</a></span>
+                        </div>
+                </div>    
+            </section>
 
-                        ))}
-               
-        </div>
-    )
+    
+    
+    );
   
 }
-/*
-<Swiper
-                grabCursor={true}
-                modules={[Autoplay]}
-                speed={1000}
-                spaceBetween={0}
-                slidesPerView={1}
-                loop
-                className="swiper"
-            >
-                
-                <SwiperSlide className="swiperslide-container"></SwiperSlide>
 
 
-
-                   </SwiperSlide>
-            </Swiper>
-*/

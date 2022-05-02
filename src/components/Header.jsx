@@ -12,7 +12,7 @@ export default function Header() {
           <Link to="/"><img src="images/logo3.jpg"/></Link>
       </div>
       <div className="logo-title">
-        <Link to="/"><h1>rMovies</h1></Link>
+        <Link to="/"><h1>tMovies</h1></Link>
       </div>
           
     </div>
