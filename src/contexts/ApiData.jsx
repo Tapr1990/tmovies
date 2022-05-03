@@ -5,9 +5,9 @@ export const ApiData = createContext();
 
 export function ApiDataProvider(props) {
 
-  //https://api.themoviedb.org/3/movie/76341?api_key=<<api_key>>
+  
 
-    const API_KEY = "41fe7d9a83e0d2366dcfea91830440fa";
+    
 
     const API_URL = "https://api.themoviedb.org/3";
   
@@ -24,9 +24,9 @@ export function ApiDataProvider(props) {
   
     useEffect( () => {
   
-      const data1 = fetch(API_URL+"/discover/movie?api_key="+API_KEY).then(response => response.json());
+      const data1 = fetch(API_URL + "/discover/movie?api_key=" + Data.API_KEY).then(response => response.json());
   
-      const data2 = fetch(API_URL+"/discover/tv?api_key="+API_KEY).then(response => response.json());
+      const data2 = fetch(API_URL + "/discover/tv?api_key=" + Data.API_KEY).then(response => response.json());
 
            
   
