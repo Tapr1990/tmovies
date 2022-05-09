@@ -1,3 +1,10 @@
+:root {
+    --principal-color: #ff2c1f;
+    --secondary-color: #020307;
+    --text-color1: #fff;
+    --text-color2: #a0a0a0;
+}
+
 .container-series{
     max-width: 1300px;
     margin: auto;
@@ -46,6 +53,6 @@
 .background-image .background-title h1 {
     position: relative;
     z-index: 2;
-    color: #FFF;
+    color: var(--text-color1);
     font-size: 5rem;
 }

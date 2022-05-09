@@ -1,20 +1,21 @@
+:root {
+    --principal-color: #ff2c1f;
+    --secondary-color: #020307;
+    --text-color1: #fff;
+    --text-color2: #a0a0a0;
+}
+
 .container-logo {
    display: flex;
    justify-content: flex-start;
    align-items: center;
 }
 
-.container-logo .logo-image img {
-    width: 35px;
-    
-}
-    
-    
 
 .container-logo .logo-title h1 {
     font-weight: 600;
     padding: 5px 5px;
-    color: #FFF;
+    color: var(--text-color1);
 }
    
     
@@ -22,7 +23,7 @@
 
 .container-logo .logo-title h1:hover {
    
-    color: #a0a0a0;
+    color: var(--text-color2);
     font-weight: 600;
     padding: 5px 5px;
    

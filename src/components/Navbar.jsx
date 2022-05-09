@@ -6,7 +6,7 @@ import Header from './Header';
 
 export default function Navbar() {
   return (
-    <header className="header_container">
+    <header className="header_container shadow">
       <Header />
       <nav className="nav_container">
           <ul className="nav_list">
@@ -15,8 +15,9 @@ export default function Navbar() {
               <li className="nav_item"><NavLink className="nav_link" to="/tvseries">Tvseries</NavLink></li>
               <li className="nav_item"><NavLink className="nav_link" to="/contacts">Contacts</NavLink></li>
           </ul>
-          <div className='container-search'>
-            <input type="search" id="search" name="search" aria-label="search" placeholder="Search"/>
+          <div className='container-log'>
+            <span className="sign-in">Sign In</span>
+            <span className="log-in">Log In</span>
           </div>
       </nav>
     </header>

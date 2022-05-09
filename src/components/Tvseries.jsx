@@ -1,38 +1,48 @@
-import { useContext } from "react"
-import { ApiData } from "../contexts/ApiData"
+
+
+//import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
+
 import '../styles/Tvseries.css'
 
-export default function Tvseries() {
 
-  const IMG_API = "https://image.tmdb.org/t/p/w500";
+export default function Tvseries(props) {
 
-  const context = useContext(ApiData);
+  const IMG_POSTER = "https://image.tmdb.org/t/p/w500";
 
-  const {tvSeries, img} = context;
+  
 
-  const dataTvSeries = tvSeries;
 
-  const dataimg = img;
 
   return (
     <main>
        <section className="background-container">
-        <div className="background-image"  style={{backgroundImage: `url(${"https://image.tmdb.org/t/p/w1280" + dataimg.backdrop_path})`}}>
-              <div className='background-title'>
-                <h1>Tvseries</h1>
-              </div>
-        </div>
-      </section>
+          <div className='background-title'>
+            <img className="background-image" src="images/2052703.jpg" alt=""/>
+            <h2>TvSeries</h2>
+          </div>
+        </section>
       <section className="container-series">
-        <div className="container-serie-card">
-          {dataTvSeries.map(serie => (
-            <div className="serie-card" key={serie.id}>
-              <img src={IMG_API + serie.poster_path} alt={serie.name}/>
-              <h3>{serie.name}</h3>
-            </div>
-          ))}
+          <form onSubmit={props.submitTvSeries}>
+            <input
+              type="search"
+              name="search"
+              placeholder="Search TvSeries"
+              value={props.search}
+              onChange={props.changeTvSeries}
+            />
+          </form>
+          <div className="container-serie-card">
+            {props.series.length > 0 && props.series.map(serie => (
+              <div className="serie-card" key={serie.id}>
+                <NavLink to={"/seriescard/" + serie.id}><img src={IMG_POSTER + serie.poster_path} alt={serie.name}/></NavLink>
+                <NavLink to={"seriescard/" + serie.id}><h3>{serie.name}</h3></NavLink>
+              </div>
+            ))}
 
-        </div>
+          </div>
+       
       </section>
     
     </main>
@@ -42,3 +52,6 @@ export default function Tvseries() {
 
   )
 }
+
+/*
+*/
