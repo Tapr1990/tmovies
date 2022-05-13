@@ -40,6 +40,9 @@ export default function Movies(props) {
                 <div className="movie-card" key={movie.id}>
                   <NavLink to={"/moviecard/" + movie.id}><img src={IMG_POSTER + movie.poster_path} alt={movie.title}/></NavLink>
                   <NavLink to={"/moviecard/" + movie.id}><h3>{movie.title}</h3></NavLink>
+                  <div className="favourite-movies" onClick={() => props.handleFavourites(movie)}>
+                    <span>Add to Favourites</span>
+                  </div>
                 </div>
               ))}
             </div>

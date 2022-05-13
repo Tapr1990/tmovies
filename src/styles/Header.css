@@ -12,26 +12,31 @@
 }
 
 
-.container-logo .logo-title h1 {
+.container-logo .logo-title h1 a {
+    font-size: 2rem;
     font-weight: 600;
     padding: 5px 5px;
     color: var(--text-color1);
 }
-   
-    
-    
+
+.container-logo .logo-image .bx {
+    font-size: 45px;
+    color: var(--principal-color);
+}
+
 
 .container-logo .logo-title h1:hover {
-   
+    
     color: var(--text-color2);
     font-weight: 600;
     padding: 5px 5px;
-   
+    
     
 }
 
 .container-logo .logo-title a {
     text-decoration: none;
+    color: var(--text-color1);
 }  
    
   

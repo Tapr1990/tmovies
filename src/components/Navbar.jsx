@@ -12,7 +12,7 @@ export default function Navbar() {
           <ul className="nav_list">
               <li className="nav_item"><NavLink className="nav_link" to="/">Home</NavLink></li>
               <li className="nav_item"><NavLink className="nav_link" to="/movies">Movies</NavLink></li>
-              <li className="nav_item"><NavLink className="nav_link" to="/tvseries">Tvseries</NavLink></li>
+              <li className="nav_item"><NavLink className="nav_link" to="/favourites">Favourites</NavLink></li>
               <li className="nav_item"><NavLink className="nav_link" to="/contacts">Contacts</NavLink></li>
           </ul>
           <div className='container-log'>
@@ -22,6 +22,7 @@ export default function Navbar() {
       </nav>
     </header>
       
+              
 
 
   );

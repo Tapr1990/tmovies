@@ -5,6 +5,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 
+
+import Favourites from './components/Favourites';
+import Footer from './components/Footer';
 import Home from './components/Home';
 import Moviecard from './components/Moviecard';
 import Movies from './components/Movies';
@@ -15,12 +18,15 @@ import Tvseries from './components/Tvseries';
 
 
 
+
+
 function App() {
 
   const [dataMovies, setDataMovies] = useState([]);
-  const [dataTvSeries, setDataTvSeries] = useState([]);
   const [searchMovie, setSearchMovies] = useState("");
-  const [searchTvSeries, setSearchTvSeries] = useState("");
+  const [favourites, setFavourites] = useState("");
+  
+  
 
   const API_URL = "https://api.themoviedb.org/3";
   const Search_API_MOVIES = "https://api.themoviedb.org/3/search/movie?api_key=41fe7d9a83e0d2366dcfea91830440fa&query=";
@@ -28,29 +34,18 @@ function App() {
 
   useEffect( () => {
    
-    const data1 = fetch(API_URL + "/discover/movie?sort_by=popularity.desc&api_key=41fe7d9a83e0d2366dcfea91830440fa").then(response => response.json());
-  
-    const data2 = fetch(API_URL + "/discover/tv?sort_by=popularity.desc&api_key=41fe7d9a83e0d2366dcfea91830440fa").then(response => response.json());
-  
-                
-  
-    Promise.all([data1, data2])
+    fetch(API_URL + "/discover/movie?sort_by=popularity.desc&api_key=41fe7d9a83e0d2366dcfea91830440fa")
+    .then(response => response.json())
     .then( data => {
-  
-      const movies = data[0];
-      const tvseries = data[1];
-      
       
   
-      setDataMovies(movies.results);
-      setDataTvSeries(tvseries.results);
+      setDataMovies(data.results);
       
-     
-     
-    })
-  
+    });
   },[]);
-
+     
+     
+  /*Search for Movies*/ 
   const handeOnSubmit = (event) => {
     event.preventDefault();
     if(searchMovie) {
@@ -63,15 +58,59 @@ function App() {
       setSearchMovies("")
     }
   }
-
+    
+  
   const handeOnChange = (event) => {
     setSearchMovies(event.target.value)
   }
+                
+  
+  /*Favourite movies*/
+    const addFavourite = (movie) => {
+      const newFavourite = [...favourites, movie];
+      setFavourites(newFavourite);
+      
+    }  
+  
+  
+    const removeFavourite = (movie) => {
+      const newFavourite = favourites.filter((favourite) => favourite.id !== movie.id);
+      setFavourites(newFavourite);
+      
+    }
+    
+  
+     
+      
+  
+  
+  
+  return (
+    
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route index path="/" element={<Home />}/>
+            <Route path="/movies" element={<Movies filmes={dataMovies} searchValue={searchMovie} setSearchValue={setSearchMovies} submit={handeOnSubmit} change={handeOnChange} handleFavourites={addFavourite} />}/>
+            <Route path="/favourites" element={<Favourites favouritesMovies={favourites} handleRemove={removeFavourite}/>}/>
+            <Route path="/moviecard/:id" element={<Moviecard />}/>
+          </Routes>
+          <Footer/>
+        </div>
+      </BrowserRouter>
+  );
+}
+            
+           
+    
 
-
-
-
-  const submit = (event) => {
+     
+     
+    
+export default App;
+  
+  /*const submit = (event) => {
     event.preventDefault();
     if(searchTvSeries) {
       fetch(Search_API_TVSERIES + searchTvSeries)
@@ -82,35 +121,18 @@ function App() {
 
       setSearchTvSeries("")
     }
-  }
+  }*/
 
-  const change = (event) => {
+ /* const change = (event) => {
     setSearchTvSeries(event.target.value)
-  }
+  }*/
+
+
+
+
+
  
                 
-  return (
-    
-      <BrowserRouter>
-        <div className="App">
-          <Navbar />
-          <Routes>
-            <Route index path="/" element={<Home />}/>
-            <Route path="/movies" element={<Movies filmes={dataMovies} searchValue={searchMovie} setSearchValue={setSearchMovies} submit={handeOnSubmit} change={handeOnChange} />}/>
-            <Route path="/tvseries" element={<Tvseries series={dataTvSeries}  submitTvSeries={submit} changeTvSeries={change} search={searchTvSeries} setSearch={setSearchTvSeries}/>}/>
-            <Route path="/moviecard/:id" element={<Moviecard />}/>
-            <Route path="/seriescard/:id" element={<Seriescard />}/>
-          </Routes>
-        </div>
-      </BrowserRouter>
-    
-
-     
-  );
-}
-     
-    
-export default App;
   
       
       

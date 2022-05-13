@@ -9,7 +9,8 @@ export default function Header() {
     <div className="container-logo">
 
       <div className="logo-image">
-          <NavLink to="/"><box-icon className="logo" type='solid' name='movie-play' color="#ff2c1f" size="cssSize"></box-icon></NavLink>
+        <NavLink to="#"><i className='bx bxs-movie-play'></i></NavLink>
+
       </div>
       <div className="logo-title">
         <NavLink to="/"><h1>tMovies</h1></NavLink>

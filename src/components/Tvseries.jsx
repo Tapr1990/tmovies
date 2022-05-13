@@ -1,7 +1,7 @@
 
 
 //import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+/*import { NavLink } from 'react-router-dom';
 
 
 import '../styles/Tvseries.css'
@@ -53,5 +53,5 @@ export default function Tvseries(props) {
   )
 }
 
-/*
+
 */
