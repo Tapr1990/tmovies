@@ -1,0 +1,35 @@
+:root {
+    --principal-color: #ff2c1f;
+    --secondary-color: #020307;
+    --text-color1: #fff;
+    --text-color2: #a0a0a0;
+}
+
+
+
+.movie-card {
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.movie-card:hover {
+    cursor: pointer;
+    
+}
+
+.movie-card:hover .overlay {
+    opacity: 1;
+}
+
+.remove-favourites {
+    position: absolute;
+    background: rgba(0,0,0,0.8);
+    width: 100%;
+    transition: 0.5s ease;
+    opacity: 0;
+    bottom: 0;
+    font-size: 15px;
+    padding: 10px 15px;
+    text-align: center;
+    color: azure;
+}
