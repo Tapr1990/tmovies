@@ -15,7 +15,7 @@
 .container-logo .logo-title h1 a {
     font-size: 2rem;
     font-weight: 600;
-    padding: 5px 5px;
+    
     color: var(--text-color1);
 }
 
@@ -25,14 +25,7 @@
 }
 
 
-.container-logo .logo-title h1:hover {
-    
-    color: var(--text-color2);
-    font-weight: 600;
-    padding: 5px 5px;
-    
-    
-}
+
 
 .container-logo .logo-title a {
     text-decoration: none;
@@ -41,5 +34,42 @@
    
   
    
+@media only screen and (max-width: 1080px) {
+    .container-logo .logo-title h1 a {
+        font-size: 1.7rem;
+        
+    }
 
+    .container-logo .logo-image .bx {
+        font-size: 40px;
+        
+    }
+    
+}
+
+@media only screen and (max-width: 802px) {
+
+    .container-logo .logo-title h1 {
+        font-size: 1.5rem;
+        
+    }
+
+    .container-logo .logo-image .bx {
+        font-size: 35px;
+        
+    }
+}
                 
+@media only screen and (max-width: 474px) {
+
+    .container-logo .logo-title h1 {
+        font-size: 1.2rem;
+        
+    }
+
+    .container-logo .logo-image .bx {
+        font-size: 30px;
+        
+    }
+}
+
