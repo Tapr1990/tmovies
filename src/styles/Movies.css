@@ -45,7 +45,73 @@
     color: var(--text-color1)
 }
 
+.container-movies{
+    max-width: 1200px;
+    margin: auto;
+}
 
+.container-movies .container-movie-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 40px;
+    margin: 90px auto;
+}
+
+.container-movie-card img {
+    border-radius: 10px;
+    width: 320px;
+}
+
+
+
+.movie-card h3 {
+    text-decoration: none;
+    color: var(--text-color1);
+    font-size: 1.3rem;
+}
+
+.movie-card a {
+    text-decoration: none;
+}
+
+.favourite-movies span {
+    background-color: var(--principal-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+.favourite-movies span:hover {
+    background-color: var(--text-color1);
+    color: var(--principal-color);
+    border: 1px solid var(--principal-color);
+}
+
+.search-container {
+    text-align: center;
+    padding-top: 50px;
+
+}
+
+.search-form input {
+    width: 300px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: var(--principal-color);
+    color: var(--text-color1);
+    font-weight: 700;
+    font-size: 15px;
+    border: 1px solid var(--text-color1);
+    height: 30px;
+    border-radius: 10px;
+}
+
+.search-form input:hover {
+    background-color: var(--text-color1);
+    color: var(--principal-color);
+    border: 1px solid var(--principal-color);
+}
 
 
 

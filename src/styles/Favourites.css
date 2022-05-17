@@ -7,29 +7,91 @@
 
 
 
-.movie-card {
+.background-favourites img {
+    height: 90vh;
     position: relative;
-    transition: transform 0.2s;
+    object-fit: cover;
+    object-position: top center;
+    z-index: -1;
+    width: 100%;
+  
 }
+ 
 
-.movie-card:hover {
-    cursor: pointer;
+.background-favourites img::before {
+    content: "";
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    z-index: 1;
+    
     
 }
 
-.movie-card:hover .overlay {
-    opacity: 1;
+.background-favourites h2 {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    z-index: 2;
+    color: var(--text-color1);
+    font-size: 5rem;
 }
 
-.remove-favourites {
-    position: absolute;
-    background: rgba(0,0,0,0.8);
-    width: 100%;
-    transition: 0.5s ease;
-    opacity: 0;
-    bottom: 0;
-    font-size: 15px;
-    padding: 10px 15px;
-    text-align: center;
-    color: azure;
+.container-movie{
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 150px;
 }
+
+.container-movie {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+
+    
+   
+}
+
+.movie-card img {
+    width: 200px;
+    border-radius: 10px;
+    margin: 0px 20px;
+}
+
+.movie-card h3 {
+    text-align: center;
+}
+
+.movie-card p {
+    color: var(--text-color1);
+    margin: 0px 35px;
+    text-align: center;
+}
+
+
+
+.remove-favourites {
+    cursor: pointer;
+    color: var(--text-color1);
+    margin-top: 20px 10px;
+    background-color: var(--principal-color);
+    margin: 25px 35px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.remove-favourites:hover {
+    color: var(--principal-color);
+    background-color: var(--text-color1);
+    border: 1px solid var(--principal-color);
+}
+

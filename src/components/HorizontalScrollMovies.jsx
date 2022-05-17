@@ -27,7 +27,7 @@ export default function HorizontalScrollMovies(props) {
   
       let slide = document.getElementById("slide");
    
-      slide.scrollLeft = slide.scrollLeft - 500;
+      slide.scrollLeft = slide.scrollLeft - 600;
   
     }
   
@@ -35,7 +35,7 @@ export default function HorizontalScrollMovies(props) {
     
       let slide = document.getElementById("slide");
     
-      slide.scrollLeft = slide.scrollLeft + 500;
+      slide.scrollLeft = slide.scrollLeft + 600;
   
     } 
   
@@ -49,8 +49,9 @@ export default function HorizontalScrollMovies(props) {
               {props.popularMovies.map(image => (
                   <div className='poupular-movie-images' key={image.id}>
                       <img src={IMG_API + image.poster_path} alt={image.title}/>
-                      
+                      <p>{image.title}</p>
                   </div>
+                      
               ))}    
           </div>
           <span className="poupular-movie-right" onClick={ScrollRigth}>&#10095;</span>

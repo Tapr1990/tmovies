@@ -24,8 +24,8 @@ export default function Movies(props) {
        
         
       </section>
-      <section>
-        <form onSubmit={props.submit}>
+      <section className="search-container">
+        <form className="search-form" onSubmit={props.submit}>
           <input
             type="search"
             name="search"

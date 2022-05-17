@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Contacts from './components/Contacts';
 
 
 
@@ -94,6 +95,7 @@ function App() {
             <Route index path="/" element={<Home />}/>
             <Route path="/movies" element={<Movies filmes={dataMovies} searchValue={searchMovie} setSearchValue={setSearchMovies} submit={handeOnSubmit} change={handeOnChange} handleFavourites={addFavourite} />}/>
             <Route path="/favourites" element={<Favourites favouritesMovies={favourites} handleRemove={removeFavourite}/>}/>
+            <Route path="/contacts" element={<Contacts />} />
             <Route path="/moviecard/:id" element={<Moviecard />}/>
           </Routes>
           <Footer/>
