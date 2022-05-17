@@ -7,7 +7,11 @@
 
 
 .background-image {
-    height: 80vh;
+    height: 100vh;
+   
+}
+
+.background-image img {
     position: relative;
     object-fit: cover;
     object-position: top center;
@@ -15,12 +19,12 @@
     justify-content: center;
     align-items: center;
     z-index: -1;
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 .background-image::before {
     content: "";
-    height: 80vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -28,8 +32,10 @@
     right: 0;
     object-fit: cover;
     background-color: rgba(0,0,0,0.4);
-    width: 100%;
+    max-width: 100%;
+    height: auto;
     z-index: 1;
+    
     
     
 }

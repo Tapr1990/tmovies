@@ -18,7 +18,7 @@ export default function Movies(props) {
     <main>
       <section className="background-container">
         <div className='background-title'>
-          <img className="background-image" src="images/254202.jpg" alt=""/>
+          <img src="images/iron-men.jpg" alt=""/>
           <h2>Movies</h2>
         </div>
        

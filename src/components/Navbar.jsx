@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../styles/Navbar.css';
 import Header from './Header';
@@ -15,10 +15,24 @@ export default function Navbar() {
     navbar.classList.toggle("active");
   }
 
+  const [colorChange, setColorChange] = useState(false);
+
+  const changeColor = () => {
+    if(window.scrollY >= 90) {
+        setColorChange(true);
+    }
+    else {
+      setColorChange(false);
+    }
+  }
+  
+  window.addEventListener("scroll", changeColor)
+  
+
 
 
   return (
-    <header className="header_container">
+    <header className={ colorChange ? "header_container header-shadow" : "header_container"}>
       <Header />
       <nav className="nav_container" onClick={menuHamburguer}>
           <ul className="nav_list">

@@ -5,22 +5,25 @@
     --text-color2: #a0a0a0;
 }
 
-
+.background-favourites {
+    height: 100vh;
+}
 
 .background-favourites img {
-    height: 90vh;
+    
     position: relative;
     object-fit: cover;
     object-position: top center;
     z-index: -1;
-    width: 100%;
+    max-width: 100%;
+    height: auto;
   
 }
  
 
 .background-favourites img::before {
     content: "";
-    height: 100vh;
+    height: auto;
     position: absolute;
     top: 0;
     left: 0;
@@ -28,7 +31,7 @@
     right: 0;
     object-fit: cover;
     background-color: rgba(0,0,0,0.6);
-    width: 100%;
+    max-width: 100%;
     z-index: 1;
     
     

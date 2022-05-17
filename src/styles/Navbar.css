@@ -16,7 +16,11 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 100px;
-  
+    transition: 0.5s;
+}
+
+.header-shadow {
+    background-color: var(--secondary-color);
 }
 
 
