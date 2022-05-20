@@ -49,9 +49,9 @@ export default function Navbar() {
       <div className="bx bx-menu" id="menu-icon" onClick={menuHamburguer}/>
     </header>
       
+  );
+}
               
 
 
-  );
-}
 

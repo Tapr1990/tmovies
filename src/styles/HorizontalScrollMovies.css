@@ -5,152 +5,129 @@
     --text-color2: #a0a0a0;
 }
 
-.poupular-movie-container {
-    margin: 20px auto;
+.container-horizontal-slide {
     max-width: 1200px;
-    width: 100%;
- 
+    margin: auto;
 }
 
-.poupular-movie-container h2 {
+.horizontal-slide {
+    margin: 150px auto;
+    
+}
+
+.horizontal-slide .horizontal-slide-title  {
     color: var(--text-color1);
-    padding-top: 200px;
-    padding-bottom: 17px;
-    margin-left: 10px;
+    margin: 50px 30px;
+    font-size: 1.3rem;
 }
 
 
-.poupular-movies {
-    width: 100%;
-    height: 550px;
-    position: relative;
-    overflow: scroll;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    white-space: nowrap;
-    display: inline-block;
-    text-align: center;
-    padding-bottom: 10px !important;
-    display: flex;
-    align-items: center;
-}
 
 
-.poupular-movie-images {
-    width: auto;
-}
-    
-
-.poupular-movie-images img {
-   min-width: 300px;
-   max-width: 300px;
-   height: 450px;
-   object-fit: cover;
-   margin: 5px 10px;
-   cursor: pointer;
-   transition: 0.5s ease;
-   z-index: 2; 
-   border-radius: 10px;
-}
-
-.poupular-movie-left, .poupular-movie-right {
-    cursor: pointer;
-    position: absolute;
-    color: var(--text-color1);
-    top: 71%;
-    left: 15.7%;
-    z-index: 3;
-    font-size: 55px;
-    font-weight: 700;
-    padding: 10px;
-    margin-top: 740px;
-}
-  
-    
-    
-
-.poupular-movie-left:hover, .poupular-movie-right:hover {
-    color: var(--principal-color);
-    
-    
-}
-
-.poupular-movie-right  {
-    left: 82%;
-
-}
-
-.average-movie-container {
-    margin: 20px auto;
-    max-width: 1200px;
-    width: 100%;
- 
-}
-
-.average-movie-container h2 {
-    color: var(--text-color1);
-    padding-top: 200px;
-
-    margin-left: 10px;
-}
-
-
-.average-movies {
-    width: 100%;
-    height: 550px;
-    position: relative;
-    overflow: scroll;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    white-space: nowrap;
-    display: inline-block;
-    text-align: center;
-    padding-bottom: 10px !important;
-    display: flex;
-    align-items: center;
-}
-
-.average-movie-images {
-   width: auto;
- 
-}
-
-
-.average-movie-images img {
-    min-width: 300px;
-    max-width: 300px;
-    height: 450px;
-    object-fit: cover;
-    margin: 5px 10px;
-    cursor: pointer;
-    transition: 0.5s ease;
-    z-index: 2; 
+.swiperslide img {
+    width: 85%;
     border-radius: 10px;
-    
 }
 
-.average-movie-left, .average-movie-right {
-    cursor: pointer;
-    position: absolute;
+.swiperslide h4 {
     color: var(--text-color1);
-    top: 160%;
-    left: 15.7%;
-    z-index: 3;
-    font-size: 55px;
-    font-weight: 700;
-    padding: 10px;
-    margin-top: 740px;
-}
-
-.average-movie-left:hover, .average-movie-right:hover {
-    color: var(--principal-color);
-    
     
 }
 
-.average-movie-right  {
-    left: 82%;
 
+
+
+@media only screen and (max-width: 1300px) {
+    .container-horizontal-slide {
+        max-width: 1000px;
+        margin: auto;
+    }
 }
+
+@media only screen and (max-width: 1024px) {
+    .container-horizontal-slide {
+        max-width: 750px;
+        margin: auto;
+    }
+
+    .container-horizontal-slide {
+        padding-top: 6rem;
+    }
+
+    .swiperslide img {
+        width: 90%;
+    }
+
+    .horizontal-slide {
+        margin: 140px 0px;
+    }
+
+    .horizontal-slide .horizontal-slide-title  {
+        font-size: 1.1rem;
+       
+    }
+
+    .swiperslide h4 {
+        font-size: 1rem;
+        
+    }
+}
+
+@media only screen and (max-width: 774px) {
+    .horizontal-slide {
+        margin: 80px auto;
+        
+    }
+
+    .container-horizontal-slide {
+        max-width: 550px;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .horizontal-slide {
+        margin: 30px auto;
+        
+    }
+
+    .container-horizontal-slide {
+        max-width: 450px;
+        margin: auto;
+    }
+}
+
+
+@media only screen and (max-width: 474px) {
+    .horizontal-slide {
+        margin: 0px auto;
+        
+    }
+
+    .container-horizontal-slide {
+        max-width: 360px;
+        margin: auto;
+    }
+
+    .swiperslide img {
+        width: 100%;
+    }
+
+    .horizontal-slide {
+        margin: 100px 0px;
+    }
+
+    .swiperslide h4 {
+        font-size: 0.85rem;
+        
+    }
+
+    .horizontal-slide .horizontal-slide-title  {
+        font-size: 0.8rem;
+       
+    }
+}
+
+    
 
 

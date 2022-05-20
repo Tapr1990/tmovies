@@ -1,75 +1,122 @@
 import '../styles/HorizontalScrollMovies.css'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation} from 'swiper'
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+
+
+
 
 export default function HorizontalScrollMovies(props) {
 
-    const IMG_API = "https://image.tmdb.org/t/p/w500";
+  const IMG_API = "https://image.tmdb.org/t/p/w500";
+
 
   
-    //const dataTvSeries = tvSeries;
-  
-    const ScrollLeft = () => {
-  
-      let slider = document.getElementById("slider");
-   
-      slider.scrollLeft = slider.scrollLeft - 500;
-  
-    }
-  
-    const ScrollRigth = () => {
-    
-      let slider = document.getElementById("slider");
-    
-      slider.scrollLeft = slider.scrollLeft + 500;
-  
-    } 
 
-    const ScrollPrev = () => {
-  
-      let slide = document.getElementById("slide");
-   
-      slide.scrollLeft = slide.scrollLeft - 600;
-  
-    }
-  
-    const ScrollNext = () => {
-    
-      let slide = document.getElementById("slide");
-    
-      slide.scrollLeft = slide.scrollLeft + 600;
-  
-    } 
-  
+      
   return (
-    <>
-      <section className="poupular-movie-container">
+    <section className="container-horizontal-slide">
 
-          <h2>Popular Movies</h2>
-          <span className="poupular-movie-left" onClick={ScrollLeft}>&#10094;</span>
-          <div id="slider" className='poupular-movies'>
-              {props.popularMovies.map(image => (
-                  <div className='poupular-movie-images' key={image.id}>
-                      <img src={IMG_API + image.poster_path} alt={image.title}/>
-                      <p>{image.title}</p>
-                  </div>
-                      
-              ))}    
+        <div className="horizontal-slide"> 
+          <div className="horizontal-slide-title">
+            <h3>Popular Movies</h3>  
           </div>
-          <span className="poupular-movie-right" onClick={ScrollRigth}>&#10095;</span>
-      </section>
-      <section className="average-movie-container">
-        <h2>Average Vote Movies</h2>
-        <span className="average-movie-left" onClick={ScrollPrev}>&#10094;</span>
-        <div id="slide" className='average-movies'>
-          {props.bestMovies.map(image => (
-              <div className='average-movie-images' key={image.id}>
-                  <img src={IMG_API + image.poster_path} alt={image.title}/>
-              </div>
-          ))}    
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={10}
+            slidesPerView={5}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+            grabCursor={true}
+          >
+            {props.popularMovies.map(image => (
+                    
+              <SwiperSlide className="swiperslide" key={image.id}>
+                <img src={IMG_API + image.poster_path} alt={image.title}/>
+                <h4>{image.title}</h4>
+              </SwiperSlide>
+            ))}    
+          </Swiper>
         </div>
-        <span className="average-movie-right" onClick={ScrollNext}>&#10095;</span>
+        <div className="horizontal-slide"> 
+          <div className="horizontal-slide-title">
+            <h3>Best Movies</h3>  
+          </div>
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={10}
+            slidesPerView={5}
+            grabCursor={true}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+          >                
+            {props.bestMovies.map(image => (
+                    
+              <SwiperSlide className="swiperslide" key={image.id}>
+                <img src={IMG_API + image.poster_path} alt={image.title}/>
+                <h4>{image.title}</h4>
+              </SwiperSlide>
+            ))}    
+          </Swiper>
+        </div>
+        <div className="horizontal-slide"> 
+          <div className="horizontal-slide-title">
+            <h3>Revenue Movies</h3>  
+          </div>
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={10}
+            slidesPerView={5}
+            grabCursor={true}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {props.revenueMovies.map(image => (
+                     
+              <SwiperSlide className="swiperslide" key={image.id}>
+                <img src={IMG_API + image.poster_path} alt={image.title}/>
+                <h4>{image.title}</h4>
+              </SwiperSlide>
+            ))}    
+          </Swiper>  
+        </div>  
       </section>
-    </>
+              
+    );
+  }
+          
+            
+            
+
+          
+                        
+                   
+                        
+            
+          
+           
+             
+          
+            
+
+            
+                         
+            
+
+            
+                          
+                    
+                          
+              
+   
+      
+      
+       
+    
+   
       
 
-  )
-}
+
+

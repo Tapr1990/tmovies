@@ -4,14 +4,14 @@ import '../styles/Footer.css';
 
 export default function Footer() {
   return (
-    <>
+    <footer>
         <section className="footer">
             <div className="footer-logo">
                 <div className="logo-image">
                     <NavLink to="/"><i className='bx bxs-movie-play'></i></NavLink>
                 </div>
                 <div className="logo-title">
-                    <NavLink to="/"><h1>tMovies</h1></NavLink>
+                    <NavLink to="/"><h6>tMovies</h6></NavLink>
                 </div>
 
           
@@ -23,12 +23,12 @@ export default function Footer() {
                 <NavLink to="#"><i className='bx bxl-tiktok'></i></NavLink>
             </div>
         </section>
-        <section>
+        <section className="copyright-footer">
             <div className="copyright">
                 <p>&#169; tmovies All Right Reserved.</p>
             </div>
         </section>   
-    </>  
+    </footer>  
       
     
   )

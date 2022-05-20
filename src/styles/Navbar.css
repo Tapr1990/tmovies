@@ -15,7 +15,7 @@
     z-index: 1000;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 100px;
+    padding: 20px 70px;
     transition: 0.5s;
 }
 
@@ -28,7 +28,7 @@
 .header_container .nav_container {
     
     display: flex;
-   
+   margin-left: 3.25rem;
     
 }
 
@@ -83,7 +83,7 @@
 } 
 
 .container-log .sign-in {
-   
+   margin-right: 1.5rem;
 }
 
 .container-log .sign-in:hover, .container-log .log-in:hover {
@@ -105,72 +105,25 @@
 
 
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1024px) {
 
     .header_container {
-        padding: 20px 80px;
+        padding: 20px 50px;
+        
     }
-
-    .nav_container {
-        margin-left: 115px;
-    }
-
-    .container-log {
-        margin-left: 20px;
-    }
-
-    .log-in {
-        margin-left: 10px;
-    }
-}
-
-@media only screen and (max-width: 1080px) {
-
-    .header_container {
-        padding: 20px 40px;
-    }
-
-    .nav_container {
-        margin-left: 41px;
+    .header_container .nav_container {
+        margin-left: 0rem;
     }
 
     .nav_list .nav_item .nav_link {
-        font-size: 1.1rem;
-    }
-
-    .container-log{
-        margin-left: 15px;
+        font-size: 1rem;
     }
 
     .container-log .sign-in, .container-log .log-in {
-        font-size: 1.1rem;
-        padding: 8px 18px;
+        padding: 5px 10px;
+        font-size: 1rem;
     }
-
-
-
-}
-
-@media only screen and (max-width: 990px) {
-    .header_container {
-        padding: 20px 13px;
-    }
-}
-
-@media only screen and (max-width: 802px) {
-
-    .header_container {
-        padding: 20px 5px;
-    }
-
-    .nav_list .nav_item .nav_link {
-        font-size: 0.95rem;
-    }
-
-    .container-log .sign-in, .container-log .log-in {
-        font-size: 0.95rem;
-        padding: 5px 15px;
-    }
+   
 }
 
 @media only screen and (max-width: 774px) {
@@ -215,7 +168,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        line-height: 70px;
+        line-height: 60px;
+        padding-top: 30px;
     }
 
     .nav_list .nav_item .nav_link  {
@@ -240,24 +194,50 @@
 
 }
 
-@media only screen and (max-width: 604px) {
 
-    .header_container {
-        padding: 20px 30px;
-    }
-
-    .container-log .sign-in, .container-log .log-in {
-        font-size: 1rem;
-        padding: 5px 15px;
-    }
-}
 
 @media only screen and (max-width: 474px) {
-
+    .header_container {
+        padding: 20px 20px;
+        
+    }
     .container-log .sign-in, .container-log .log-in {
-        font-size: 0.85rem;
-        padding: 3px 13px;
+        font-size: 0.70rem;
+        padding: 3px 10px;
+    }
+
+    #menu-icon {
+        font-size: 24px;
+    }
+
+    .nav_container .nav_list .nav_item {
+      
+        line-height: 30px;
+        padding-top: 60px;
     }
 }
+
+@media only screen and (max-width: 360px) {
+    .header_container {
+        padding: 20px 15px;
+        
+    }
+
+    .container-log .sign-in {
+        margin-right: 0.5rem;
+    }
+
+     #menu-icon {
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+
+
+
 
 
