@@ -29,12 +29,12 @@ function App() {
   
 
   const API_URL = "https://api.themoviedb.org/3";
-  const Search_API_MOVIES = "https://api.themoviedb.org/3/search/movie?api_key=41fe7d9a83e0d2366dcfea91830440fa&query=";
+  //const Search_API_MOVIES = "https://api.themoviedb.org/3/search/movie?&query=";
   
 
   useEffect( () => {
    
-    fetch(API_URL + "/discover/movie?sort_by=popularity.desc&api_key=41fe7d9a83e0d2366dcfea91830440fa")
+    fetch(API_URL + "/discover/movie?sort_by=popularity.desc&api_key=")
     .then(response => response.json())
     .then( data => {
       

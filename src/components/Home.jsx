@@ -20,11 +20,11 @@ export default function Home() {
      
   useEffect( () => {
    
-    const data1 = fetch(API_URL + "/discover/movie?sort_by=popularity.desc&api_key=41fe7d9a83e0d2366dcfea91830440fa").then(response => response.json());
+    //const data1 = fetch(API_URL + "/discover/movie?sort_by=popularity.desc&api_key=).then(response => response.json());
   
-    const data2 = fetch(API_URL + "/discover/movie?sort_by=vote_count.desc&api_key=41fe7d9a83e0d2366dcfea91830440fa").then(response => response.json());
+    //const data2 = fetch(API_URL + "/discover/movie?sort_by=vote_count.desc&api_key=).then(response => response.json());
   
-    const data3 = fetch(API_URL + "/discover/movie?sort_by=revenue.desc&api_key=41fe7d9a83e0d2366dcfea91830440fa").then(response => response.json());            
+    //const data3 = fetch(API_URL + "/discover/movie?sort_by=revenue.desc&api_key=").then(response => response.json());            
   
     Promise.all([data1, data2, data3])
     .then( data => {

@@ -34,8 +34,8 @@
     
 }
 
-.footer-logo .logo-title a{
-  font-size: 1.4rem;
+.footer .footer-logo .logo-title a{
+  font-size: 1.8rem;
   font-weight: 600;
   text-decoration: none;
   color: var(--text-color1);
